@@ -45,7 +45,7 @@ function createWindow() {
         webPreferences.sandbox = true;
 
         // Verify URL
-        if (!params.src.includes('witch.tv')) {
+        if (!params.src.includes('twitch.tv')) {
             e.preventDefault();
         }
     });
