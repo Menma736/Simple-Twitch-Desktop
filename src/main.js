@@ -45,7 +45,7 @@ function createWindow() {
         webPreferences.sandbox = true;
 
         // Verify URL
-        if (!params.src.startsWith('https://www.twitch.tv')) {
+        if (!params.src.includes('witch.tv')) {
             e.preventDefault();
         }
     });
@@ -61,7 +61,7 @@ function createWindow() {
 
         // Open external URLs that don't target blank in the default browser.
         webContents.on("will-navigate", (ev, url) => {
-            if (!url.includes("https://www.twitch.tv")) {
+            if (!url.includes("twitch.tv")) {
                 ev.preventDefault();
                 shell.openExternal(url);
             }

@@ -5,7 +5,7 @@
     "main": "src/main.js",
     "scripts": {
         "start": "electron .",
-        "pack": "electron-builder"
+        "build": "electron-builder"
     },
     "repository": {
         "type": "git",
@@ -19,5 +19,41 @@
     "devDependencies": {
         "electron": "^9.1.0",
         "electron-builder": "^22.7.0"
+    },
+	  "build": {
+    "appId": "Twitch-Desktop",
+    "productName": "Twitch Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "src/assets/icons/app-icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.games"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "src/assets/icons/",
+      "category": "Internet"
     }
+  }
 }
